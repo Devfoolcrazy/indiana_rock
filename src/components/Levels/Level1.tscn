@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/components/Player/Player.tscn" type="PackedScene" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 162.5, 11 )
+
+[node name="Level1" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 192, 18 )
+
+[node name="kine" type="KinematicBody2D" parent="."]
+position = Vector2( -5, 6 )
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kine"]
+position = Vector2( 634, 578 )
+shape = SubResource( 1 )
+
+[node name="kine2" type="KinematicBody2D" parent="."]
+position = Vector2( -5, 6 )
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kine2"]
+position = Vector2( 178, 104 )
+shape = SubResource( 1 )
+
+[node name="kine3" type="KinematicBody2D" parent="."]
+position = Vector2( -5, 6 )
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kine3"]
+position = Vector2( 307, 578 )
+shape = SubResource( 1 )
