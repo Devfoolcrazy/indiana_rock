@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/scripts/Enemy.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=3]
+
+[sub_resource type="SpriteFrames" id=2]
+resource_local_to_scene = true
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=4]
+
+[node name="Enemy" type="KinematicBody2D"]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 2.5 )
+scale = Vector2( 2, 2 )
+shape = SubResource( 3 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 2, 2 )
+frames = SubResource( 2 )
+playing = true
+
+[node name="CliffDetection" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 0, 32 )
+collision_mask = 2
+
+[node name="HurtChecker" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtChecker"]
+shape = SubResource( 4 )
+
+[connection signal="body_entered" from="HurtChecker" to="." method="_on_HurtChecker_body_entered"]

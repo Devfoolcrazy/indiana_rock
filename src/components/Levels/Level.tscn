@@ -1,0 +1,24 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://src/components/Tilemaps/TileMapOneWay.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/components/Tilemaps/TileMapBlockDeco16X16.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/components/Tilemaps/TilemapBlocDithering.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/components/Tilemaps/TileMapBlockDithering16X8.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/components/Tilemaps/TileMapBlocDithering8X8.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/components/Tilemaps/TileMapItem.tscn" type="PackedScene" id=8]
+
+[node name="Level" type="Node2D"]
+
+[node name="TileMapBlocDithering8X8" parent="." instance=ExtResource( 7 )]
+
+[node name="TilemapBlocDithering16X16" parent="." instance=ExtResource( 4 )]
+tile_data = PoolIntArray(  )
+
+[node name="TileMapBlockDeco16X16" parent="." instance=ExtResource( 3 )]
+
+[node name="TileMapBlockDithering16X8" parent="." instance=ExtResource( 5 )]
+
+[node name="TileMapItem" parent="." instance=ExtResource( 8 )]
+collision_mask = 0
+
+[node name="TileMapOneWay" parent="." instance=ExtResource( 2 )]

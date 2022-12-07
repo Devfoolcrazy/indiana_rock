@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/tilemap/background/backgroud_white_1024_600.png" type="Texture" id=1]
+
+[node name="Background" type="Node2D"]
+z_index = -100
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0.313726, 0.313726, 0.313726, 1 )
+scale = Vector2( 10, 10 )
+z_index = -100
+texture = ExtResource( 1 )
+offset = Vector2( 512, 300 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+z_index = -100
+color = Color( 0.482353, 0.482353, 0.482353, 1 )
